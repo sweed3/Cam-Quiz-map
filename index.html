@@ -25,14 +25,12 @@
   <!-- Create the interactive map content with JavaScript (.js) -->
   <script>
 
-  /* Set up the initial map center and zoom level */
-  var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
-	center: [41.77, -72.69], // EDIT coordinates to re-center map
-    zoom: 12,  // EDIT from 1 (zoomed out) to 18 (zoomed in)
+ /* Set up the initial map center and zoom level */
+  var map = L.map('map', {
+    center: [41.77, -72.69], // EDIT coordinates to re-center map
+    zoom: 9,  // EDIT from 1 (zoomed out) to 18 (zoomed in)
     scrollWheelZoom: false
   });
-});
 
   /* display basemap tiles -- see others at https://leaflet-extras.github.io/leaflet-providers/preview/ */
   L.tileLayer(
@@ -41,14 +39,15 @@
         OpenStreetMap</a> contributors, &copy;\
         <a href="https://carto.com/attribution">CARTO</a>'
   }).addTo(map);
-
-  /* Display a point marker with pop-up text */
-  L.marker([41.747768, -72.690839]).addTo(map) // EDIT marker coordinates
-  .bindPopup("Trinity College"); // EDIT pop-up text message
-    L.marker([41.556474, -72.656818]).addTo(map) // EDIT marker coordinates
-  .bindPopup("Wesleyan University"); // EDIT pop-up text message
-  L.marker([41.379781, -72.104439]).addTo(map) // EDIT marker coordinates
-  .bindPopup("Connecticut College"); // EDIT pop-up text message
+  
+/* Display a point marker with pop-up text */
+  L.marker([41.37, -72.10]).addTo(map) // EDIT marker coordinates
+  .bindPopup("Connecticut College"); // EDIT pop-up text message   
+    L.marker([41.74, -72.69]).addTo(map)
+  .bindPopup("Trinity College");
+     L.marker([41.54, -72.66]).addTo(map)
+  .bindPopup("Wesleyan University");
+	  
   </script>
 </body>
 </html>
