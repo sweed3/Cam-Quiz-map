@@ -26,11 +26,10 @@
   <script>
 
   /* Set up the initial map center and zoom level */
-  var map = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    center: [41.77, -72.69], // EDIT coordinates to re-center map
-    zoom: 10,  // EDIT from 1 (zoomed out) to 18 (zoomed in)
-    scrollWheelZoom: false
-  });
+  var Stadia_OSMBright = L.tileLayer('https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png', {
+	maxZoom: 15,
+	attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+});
 
   /* display basemap tiles -- see others at https://leaflet-extras.github.io/leaflet-providers/preview/ */
   L.tileLayer(
